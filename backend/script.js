@@ -1,22 +1,36 @@
 let button = document.querySelector(".btn");
-let UL = document.querySelector(".myUl");
+// let UL = document.querySelector(".myUl");
 
+// Contact Form
+let contactForm = document.querySelector(".contact-form");
 
-button.addEventListener("click", () => {
-    let extractedText = document.querySelector(".form-control").value;
-    if (extractedText == "") {
-        alert("Empty field not Allowed");
-    }
-    else {
-        // alert(extractedText);
-        let TextNode = document.createTextNode(extractedText);
-        let listItem = document.createElement("li");
-        listItem.appendChild(TextNode);
+window.onload = function () {
+    contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        emailjs.sendForm("service_7mx8nld", "template_epdqyxp", e.target)
+            .then(function () {
+                alert("HORRAAYYYY 🌟🌟🌟✨✨✨ You sent the Form!!!");
+            }, function (error) {
+                alert(error);
+            })
+    });
+}
 
-        listItem.classList.add("noDot");
+// button.addEventListener("click", () => {
+//     let extractedText = document.querySelector(".form-control").value;
+//     if (extractedText == "") {
+//         alert("Empty field not Allowed");
+//     }
+//     else {
+//         // alert(extractedText);
+//         let TextNode = document.createTextNode(extractedText);
+//         let listItem = document.createElement("li");
+//         listItem.appendChild(TextNode);
 
-        UL.appendChild(listItem);
+//         listItem.classList.add("noDot");
 
-        document.querySelector(".form-control").value = "";
-    }
-});
+//         UL.appendChild(listItem);
+
+//         document.querySelector(".form-control").value = "";
+//     }
+// });

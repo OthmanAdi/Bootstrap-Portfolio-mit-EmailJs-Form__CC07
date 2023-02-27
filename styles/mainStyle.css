@@ -91,3 +91,16 @@
     list-style: none;
     font-size: 1.4em;
 }
+
+/* Contact Form Style */
+.contact-form {
+    /* die 3 schritten unten sind wichtig, damit contact-form selber in die mitte von sein eltern positioniert */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    /*kinder von contact-form*/
+    text-align: center;
+    width: 50%;
+    box-shadow: 0 0 80px rgba(161, 179, 96, 0.493);
+    border-radius: 20px;
+}
