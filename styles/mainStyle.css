@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 :root {
     --MainColor: #ECF2FF;
     --C1: #ECF9FF;
@@ -11,6 +13,7 @@
 .body {
     height: 100vh;
     background: var(--MainColor);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .headerTitle {
@@ -31,6 +34,38 @@
     -webkit-animation: AnimatedBG 12s ease-in-out infinite;
 }
 
+.NavUL {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.nav-A:hover::after {
+    /* Ein leeres Pseudo-Element nach dem Anker hinzufügen */
+    content: "";
+    /* color: red !important; */
+    height: 2px;
+    background-color: blue;
+    -webkit-animation: anchorUnderline 1s forwards;
+    /* Positionieren Sie das Pseudo-Element relativ zum Anker */
+    position: absolute;
+    width: 100%;
+    /* Positionieren Sie den Unterstrich am linken Rand des Ankers */
+    left: 0;
+    /* Legen Sie den Abstand zwischen dem unteren Ende des Ankers und der Unterstreichung fest */
+    bottom: 1vh;
+}
+
+@-webkit-keyframes anchorUnderline {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
 @-webkit-keyframes AnimatedBG {
     0% {
         background-position: 50% 100%;
@@ -43,4 +78,16 @@
     100% {
         background-position: 50% 100%;
     }
+}
+
+/* Todo List Style */
+.myUl {
+    max-height: 12vh;
+    overflow: auto;
+}
+
+.noDot {
+    list-style-type: none;
+    list-style: none;
+    font-size: 1.4em;
 }
