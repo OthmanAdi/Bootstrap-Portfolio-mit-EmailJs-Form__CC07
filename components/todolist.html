@@ -12,38 +12,58 @@
 
 <body>
 	<div class="body">
-		<div class="navbar bg-dark">
+
+		<!-- navigation -->
+		<div class="navbar bg-dark fixed-top">
 			<div class="container">
 				<div class="navbar-brand text-light">BootstrapPortfolio</div>
 				<ul class="navbar-nav NavUL">
 					<li class="nav-item">
-						<a href="index.html" class="nav-link text-light">
+						<a href="index.html" class="nav-link text-light nav-A">
 							Home
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="todolist.html" class="nav-link text-light">
+						<a href="todolist.html" class="nav-link text-light nav-A">
 							Todolist
 						</a>
 					</li>
+					<li class="nav-item">
+						<a href="contact.html" class="nav-link text-light nav-A">
+							Contact
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="NasaApiData.html" class="nav-link text-light nav-A">
+							Api Project
+						</a>
+					</li>
+
+					<div class="underline"></div>
 				</ul>
 			</div>
 		</div>
 
-		<div class="container Banner">
-			<h1 class="display-4 headerTitle">
-				TodoList
-			</h1>
-			<div class="TodolistFunction">
-				<input class="form-control my-5" type="text" placeholder="Create Todo">
-				<button class="btn btn-outline-primary">➕</button>
-			</div>
-			<div class="TodolistBody">
-				<ul class="myUl"></ul>
+		<!-- Body -->
+		<div class="container-fluid Banner">
+			<div class="container">
+				<div class="row mt-5">
+					<h1 class="display-4 headerTitle">
+						TodoList
+					</h1>
+					<div class="TodolistFunction">
+						<input class="form-control my-5" type="text" placeholder="Create Todo">
+						<button class="btn btn-outline-primary">➕</button>
+					</div>
+					<div class="TodolistBody">
+						<ul class="myUl"></ul>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class="footer fixed-bottom">
+		<!-- Footer -->
+		<div class="footer fixed-bottom bg-light">
 			<div class="container">
 				<div class="row">
 					<div class="col-8">
@@ -56,6 +76,8 @@
 			</div> <!--Schliesst Container, behalter diese footer komponenten-->
 		</div> <!--Schliesst der haupt container der ganzen Footer-->
 	</div>
+
+	<!-- Imports -->
 	<script src="../backend/script.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

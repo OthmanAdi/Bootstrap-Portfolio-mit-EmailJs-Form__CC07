@@ -21,11 +21,11 @@
 }
 
 .Banner {
-    height: 40vh;
+    height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     background: radial-gradient(circle at left, var(--C1), var(--C2), var(--C3), transparent),
         radial-gradient(ellipse at right, var(--C4), var(--C5), var(--C6), transparent);
     border-radius: 40px;
@@ -40,23 +40,43 @@
     gap: 20px;
 }
 
-.nav-A:hover::after {
-    /* Ein leeres Pseudo-Element nach dem Anker hinzufügen */
-    content: "";
-    /* color: red !important; */
-    height: 2px;
-    background-color: blue;
-    -webkit-animation: anchorUnderline 1s forwards;
-    /* Positionieren Sie das Pseudo-Element relativ zum Anker */
-    position: absolute;
-    width: 100%;
-    /* Positionieren Sie den Unterstrich am linken Rand des Ankers */
-    left: 0;
-    /* Legen Sie den Abstand zwischen dem unteren Ende des Ankers und der Unterstreichung fest */
-    bottom: 1vh;
+.nav-A {
+    position: relative;
 }
 
-@-webkit-keyframes anchorUnderline {
+.nav-A:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: red;
+    -webkit-animation: width 0.3s ease;
+}
+
+.nav-A:hover:before {
+    width: 100%;
+}
+
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: green;
+    -webkit-animation: underLine 1s ease-out forwards;
+}
+
+.col-4 img {
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 0px 40px rebeccapurple;
+}
+
+@-webkit-keyframes underLine {
     from {
         width: 0%;
     }
@@ -96,6 +116,7 @@
 .contact-form {
     /* die 3 schritten unten sind wichtig, damit contact-form selber in die mitte von sein eltern positioniert */
     position: absolute;
+    top: 30%;
     left: 50%;
     transform: translate(-50%);
     /*kinder von contact-form*/
